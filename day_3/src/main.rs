@@ -17,6 +17,7 @@ fn read_file(filename: impl AsRef<Path>) -> Vec<Vec<u8>> {
         .collect()
 }
 
+#[allow(clippy::ptr_arg)]
 fn filter<F>(input: &Vec<Vec<u8>>, f: F) -> Option<u32>
 where
     F: Fn(u32, u32) -> u8, // take number of zeros and number of ones, return 0 or 1
